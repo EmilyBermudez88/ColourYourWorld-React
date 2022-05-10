@@ -33,7 +33,7 @@ function ColorSelection(){
      
 
      return(
-          <section className="colourSelection">
+          <section className="colorSelection">
                <Form handleSubmit={formSubmit} />
                {
                     !colorData ? null : <DisplayPalette colors={colorData} />

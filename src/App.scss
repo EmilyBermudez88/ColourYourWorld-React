@@ -1,0 +1,15 @@
+@import './partials/baseStyles';
+@import './partials/colorSelection';
+@import './partials/form';
+@import './partials/swatches';
+
+.app {
+  display:flex;
+  .colorSelection{
+    width:35%;
+  }
+  .colorGallery {
+    width: 65%;
+    margin-left: 20px;
+  }
+}

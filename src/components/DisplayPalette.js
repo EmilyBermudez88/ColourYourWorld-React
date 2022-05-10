@@ -5,16 +5,21 @@ function DisplayPalette(props){
      const colorArray = props.colors;
 
      return(
-          <ul>
+          <ul className="colorsList">
                {colorArray.map(color=>{
                     return(
-                         <li key={color.hex.clean}>
+                         <li 
+                              className="individualColor"
+                              key={color.hex.clean}
+                         >
                               <div 
                                    className="swatch"
                                    style={{backgroundColor:`${color.hex.value}`}}>
                               </div>
-                              <p>{color.name.value}</p>
-                              <p>{color.hex.value}</p>
+                              <div>
+                                   <p>{color.name.value}</p>
+                                   <p>{color.hex.value}</p>
+                              </div>
                          </li>
                     )
                })}

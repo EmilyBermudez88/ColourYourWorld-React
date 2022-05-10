@@ -5,7 +5,10 @@ function ImageGallery(){
      return(
           <section className="colorGallery">
                <h1>Colour Your World</h1>
-               <img src={LivingRoom} alt="" />
+               <div>
+                    <img src={LivingRoom} alt="living room" />
+               </div>
+               
           </section>
      )
 }

@@ -1,11 +1,11 @@
-import './App.css';
+import './App.scss';
 import ColorSelection from './components/ColorSelection';
 import ImageGallery from './components/ImageGallery';
 
 function App() {
 
   return (
-    <div>
+    <div className="app wrapper">
       <ColorSelection />
       <ImageGallery />
     </div>
