@@ -5,7 +5,7 @@ import DisplayPalette from './DisplayPalette'
 import Footer from './Footer';
 import {useEffect, useState} from 'react';
 
-function ColorSelection(){
+function ColorSelection(props){
      
      const [userChoices, setUserChoices]= useState({})
      const [colorData, setColorData]= useState([]);
@@ -14,6 +14,7 @@ function ColorSelection(){
      const formSubmit = (e, userParams) => {
           e.preventDefault();
           setUserChoices(userParams);
+          props.handleChange(colorData);
      }
 
      useEffect(()=>{
@@ -30,6 +31,10 @@ function ColorSelection(){
                }
           })
      },[userChoices]);
+
+     useEffect(()=>{
+          props.handleChange(colorData);
+     },[colorData])
      
 
      return(
