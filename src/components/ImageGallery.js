@@ -1,20 +1,23 @@
 //ImageGallery.js
-import LivingRoom from '../assets/room2.png'
+import { Route, Routes } from 'react-router-dom';
+import RoomsNav from './RoomsNav';
+import LivingRoom from './LivingRoom';
+import Kitchen from './Kitchen';
+import Bedroom from './Bedroom';
 
 function ImageGallery(props){
-     console.log(props)
+     const backgrounds = props.colors;
+
      return(
-          <section className="colorGallery">
-               <h1>Colour Your World</h1>
-               <div className="imageContainer">
-                    <div className="color1"></div>
-                    <div className="color2"></div>
-                    <div className="color3"></div>
-                    <div className="color4"></div>
-                    <img src={LivingRoom} alt="living room" />
-               </div>
-               
-          </section>
+          <main>
+               <RoomsNav/>
+
+               <Routes>
+                    <Route path = "/" element = {<LivingRoom backgrounds = {backgrounds}/>}/>
+                    <Route path="/kitchen" element={<Kitchen backgrounds={backgrounds}/>}/>
+                    <Route path="/bedroom" element={<Bedroom backgrounds={backgrounds}/>}/>
+               </Routes>
+          </main>
      )
 }
 

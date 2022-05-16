@@ -1,0 +1,14 @@
+.roomList{
+     display:flex;
+     justify-content: space-between;
+     list-style: none;
+     max-width: 670px;
+     padding-left: 0px;
+     margin: 20px auto;
+     li {
+          height: 100px;
+          img{
+               max-height: 100%;
+          }
+     }
+}

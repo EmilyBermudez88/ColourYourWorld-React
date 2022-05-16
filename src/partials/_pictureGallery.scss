@@ -1,32 +1,42 @@
+main {
+     display:flex;
+     flex-direction: column;
+     margin-left: 20px;
+}
+
 .imageContainer{
      position:relative;
-     .color1{
+     img{
+          position:relative;
+          z-index:20;
+     }
+     div{
           position:absolute;
+          background-color: transparent;
+     }
+     .color1{
           width: 88%;
-          height:81%;
-          border: 1px solid yellow;
+          height:82%;
+          // border: 1px solid yellow;
      }
      .color2 {
-          position:absolute;
           right:0;
           width: 12%;
           height: 90%;
-          border: 1px solid blue;
+          // border: 1px solid blue;
      }
      .color3{
-          position:absolute;
           bottom: 10%;
           left:26%;
           width: 41%;
           height: 12%;
-          border: 1px solid red;
+          // border: 1px solid red;
      }
      .color4{
-          position:absolute;
           bottom: 30%;
           left: 30%;
           width: 34%;
-          height:9%;
-          border: 1px solid purple;
+          height:10%;
+          // border: 1px solid purple;
      }
 }

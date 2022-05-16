@@ -14,22 +14,38 @@ function ColorSelection(props){
      const formSubmit = (e, userParams) => {
           e.preventDefault();
           setUserChoices(userParams);
-          props.handleChange(colorData);
      }
 
      useEffect(()=>{
-          axios({
-               url: 'https://www.thecolorapi.com/scheme',
-               params: {
-                    hex: userChoices.hexValue,
-                    mode: userChoices.scheme,
-                    count: 3
-               }
-          }).then(response => {
-               if (response.ok || response.status === 200) {
-                    setColorData(response.data.colors)
-               }
-          })
+          if (userChoices.scheme==="quad"){
+               axios({
+                    url: 'https://www.thecolorapi.com/scheme',
+                    method: 'GET',
+                    params: {
+                         hex: userChoices.hexValue,
+                         mode: userChoices.scheme,
+                         count: 4
+                    }
+               }).then(response => {
+                    if (response.ok || response.status === 200) {
+                         setColorData(response.data.colors)
+                    }
+               })
+          } else {
+               axios({
+                    url: 'https://www.thecolorapi.com/scheme',
+                    method: 'GET',
+                    params: {
+                         hex: userChoices.hexValue,
+                         mode: userChoices.scheme,
+                         count: 3
+                    }
+               }).then(response => {
+                    if (response.ok || response.status === 200) {
+                         setColorData(response.data.colors)
+                    }
+               })
+          }    
      },[userChoices]);
 
      useEffect(()=>{

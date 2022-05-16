@@ -7,9 +7,9 @@ function Form(props){
           const [hexCode, setHexCode] = useState("#FFFFFF")
           const [userChoices, setUserChoices]= useState({"hexValue":"#FFFFFF","scheme": "analogic"});
 
-          const getColour=()=>{
-               const colorInput= document.getElementById("colorInput");
-               const hexValue = colorInput.value;
+
+          const getColour=(param)=>{
+               const hexValue = param.value;
                const hex={"hexValue": hexValue}
                setColorInput(hexValue);
                setHexCode(hexValue)
@@ -19,11 +19,33 @@ function Form(props){
                })
           }
 
-          const getColourViaHex=()=>{
+          const viaHex=()=>{
                const colorInput = document.getElementById("colorText");
-               const hexValue = colorInput.value;
-               setColorInput(hexValue);
-               setHexCode(hexValue);
+               testingHashtag(colorInput)
+               getColour(colorInput);
+          }
+
+          const viaPicker =()=>{
+               const colorInput = document.getElementById("colorInput");
+               getColour(colorInput);
+          }
+
+          const testingHashtag = (param) => {
+               let input = param.value;
+               if (input[0] !== "#") {
+                    input = "#" + input;
+                    console.log(input);
+                    setColorInput(input);
+               }
+          }
+
+          const testingHexCode = ()=>{
+               if (/#([a-f0-9]{6})/.test(colorInput)) {
+                    console.log('yes')
+                    console.log(colorInput)
+               } else {
+                    return false
+               }
           }
 
           const handleScheme = (e)=>{
@@ -36,6 +58,7 @@ function Form(props){
 
           const handleSubmit = (e)=>{
                props.handleSubmit(e, userChoices)
+               testingHexCode();
           }
 
      return(
@@ -45,8 +68,8 @@ function Form(props){
                <div className="formFlexContainer">
                     <label htmlFor="keyword">Select a Colour</label>
                     <div className="colourSelector">
-                         <input type="color" id="colorInput" value={colorInput} onChange={getColour}/>
-                         <input type="text" id="colorText" placeholder={hexCode} onChange={getColourViaHex}/>
+                         <input type="color" id="colorInput" value={colorInput} onChange={viaPicker}/>
+                         <input type="text" id="colorText" value={hexCode} onChange={viaHex}/>
                     </div>
                </div>
                <div className="schemeSelector">
@@ -63,6 +86,7 @@ function Form(props){
                          <option value="quad">Quad</option>
                     </select>
                </div>
+               {!testingHexCode ? <p>Wrong</p> : null }
                <button type="submit" className="submit">Find Colours to Match</button>
           </form>
      )
