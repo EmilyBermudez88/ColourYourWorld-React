@@ -11,7 +11,6 @@ function App() {
 
   const passingColors = (colorParams)=>{
     setColors(colorParams);
-    // setCount(count + 1);
   }
 
 

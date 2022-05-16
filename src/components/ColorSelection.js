@@ -6,6 +6,8 @@ import Footer from './Footer';
 import {useEffect, useState} from 'react';
 
 function ColorSelection(props){
+
+     console.log(props.handleChange)
      
      const [userChoices, setUserChoices]= useState({})
      const [colorData, setColorData]= useState([]);
@@ -50,7 +52,7 @@ function ColorSelection(props){
 
      useEffect(()=>{
           props.handleChange(colorData);
-     },[colorData])
+     }, [colorData]) //eslint-disable-line react-hooks/exhaustive-deps
      
 
      return(
