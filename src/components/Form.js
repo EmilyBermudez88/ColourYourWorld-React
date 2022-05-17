@@ -66,25 +66,27 @@ function Form(props){
           action=""
           onSubmit={handleSubmit}>
                <div className="formFlexContainer">
-                    <label htmlFor="keyword">Select a Colour</label>
-                    <div className="colourSelector">
-                         <input type="color" id="colorInput" value={colorInput} onChange={viaPicker}/>
-                         <input type="text" id="colorText" value={hexCode} onChange={viaHex}/>
+                    <div className="colorFlexContainer">
+                         <label htmlFor="keyword">Select a Colour</label>
+                         <div className="colorSelector">
+                              <input type="color" id="colorInput" value={colorInput} onChange={viaPicker} />
+                              <input type="text" id="colorText" value={hexCode} onChange={viaHex} />
+                         </div>
                     </div>
-               </div>
-               <div className="schemeSelector">
-                    <label htmlFor="schemes">Select a Colour Scheme</label>
-                    <select 
-                    name="schemes" 
-                    id="schemes"
-                    onChange={handleScheme}>
-                         <option value="analogic" >Analogic</option>
-                         <option value="analogic-complement">Analogic-Complement</option>
-                         <option value="monochrome-dark">Monochrome-Dark</option>
-                         <option value="monochrome">Monochrome</option>
-                         <option value="triad">Triad</option>
-                         <option value="quad">Quad</option>
-                    </select>
+                    <div className="schemeSelector">
+                         <label htmlFor="schemes">Select a Colour Scheme</label>
+                         <select
+                              name="schemes"
+                              id="schemes"
+                              onChange={handleScheme}>
+                              <option value="analogic" >Analogic</option>
+                              <option value="analogic-complement">Analogic-Complement</option>
+                              <option value="monochrome-dark">Monochrome-Dark</option>
+                              <option value="monochrome">Monochrome</option>
+                              <option value="triad">Triad</option>
+                              <option value="quad">Quad</option>
+                         </select>
+                    </div>
                </div>
                {!testingHexCode ? <p>Wrong</p> : null }
                <button type="submit" className="submit">Find Colours to Match</button>

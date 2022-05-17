@@ -3,6 +3,10 @@ html {
      margin: 0;
 }
 
+body {
+     font-family: "Poiret One", sans-serif;
+}
+
 .wrapper {
      max-width: 1200px;
      width: 90%;
@@ -11,4 +15,56 @@ html {
 
 img {
      max-width: 100%;
+     object-fit: cover;
+}
+
+h1 {
+     font-family: "Fredericka the Great";
+     text-align: center;
+     font-size: 2.5rem;
+}
+
+input, select, button {
+     font-family: "Poiret One", sans-serif;
+     background-color: transparent;
+     border: 1px solid rgb(166, 166, 166);
+     margin: 7px 0;
+     padding: 5px 10px;
+}
+
+button {
+     border: 1px solid gold;
+     width: 100%;
+     padding: 5px 0;
+     font-size: 0.8rem;
+     text-transform: uppercase;
+     letter-spacing: 0.8px;
+     transition: 0.5s;
+     &:hover,
+     &:focus{
+          background-color: gold;
+          border: 1px solid black;
+          outline:none;
+     }
+}
+
+a{
+     text-decoration: none;
+     color:black;
+}
+
+footer{
+     background-color: rgb(226, 226, 226);
+     padding: 5px;
+     margin-top: 7px;
+     p{
+          margin: 0;
+          text-align: center;
+     }
+     a{
+          transition:0.7s;
+          &:hover{
+               background: rgba(gold, 0.5);
+          }
+     }
 }

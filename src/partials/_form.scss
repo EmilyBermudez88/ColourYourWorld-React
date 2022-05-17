@@ -1,7 +1,23 @@
 form{
      margin-right: 20px;
-     
      label {
           display:block;
+     }
+     select{
+          width: 100%;
+     }
+     input {
+          &[type=color]{
+               height:30px;
+               width: 70px;
+               padding: 4px;
+          }
+     }
+     .colorSelector{
+          display:flex;
+          justify-content: space-between;
+     }
+     .schemeSelector{
+          margin-top: 20px;
      }
 }

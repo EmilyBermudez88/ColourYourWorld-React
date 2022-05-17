@@ -10,13 +10,12 @@ function ImageGallery(props){
 
      return(
           <main>
-               <RoomsNav/>
-
                <Routes>
                     <Route path = "/" element = {<LivingRoom backgrounds = {backgrounds}/>}/>
                     <Route path="/kitchen" element={<Kitchen backgrounds={backgrounds}/>}/>
                     <Route path="/bedroom" element={<Bedroom backgrounds={backgrounds}/>}/>
                </Routes>
+               <RoomsNav />
           </main>
      )
 }

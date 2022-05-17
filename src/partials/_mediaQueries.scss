@@ -1,5 +1,52 @@
-@media(max-width: 850px){
+@media(max-width: 900px){
      .flexContainer {
           flex-direction: column;
      }
+     //  COLOR SELECTION  //
+     .colorSelection{
+          border-right: none;
+          min-height: 140px;
+     }
+     //Form
+     .formFlexContainer {
+          display:flex;
+          flex-direction:row;
+          justify-content: space-between;
+          width: 75%;
+          margin: 0 auto;
+          .schemeSelector{
+               margin-top: 0px;
+          }
+          input {
+               &[type=color]{
+                    margin-right: 5px;
+               }
+          }
+     }
+     button {
+          width: 75%;
+          margin-left:calc( 25% / 2);
+     }
+     //Swatches
+     .colorsList{
+          display:flex;
+          flex-direction:row;
+          justify-content: space-between;
+     }
+     .individualColor{
+          flex-direction:column;
+          text-align: center;
+          max-width: 160px;
+          margin-right: 0px;
+          .swatch{
+               margin: 0 auto 5px auto;
+               width: 100px;
+               height: 100px;
+          }
+     }
+     //IMAGE GALLERY
+     main {
+          margin-left: 0px;
+     }
+
 }

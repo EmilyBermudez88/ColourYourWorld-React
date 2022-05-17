@@ -10,8 +10,7 @@ function DisplayPalette(props){
                     return(
                          <li 
                               className="individualColor"
-                              key={color.hex.clean}
-                         >
+                              key={color.hex.clean}>
                               <div 
                                    className="swatch"
                                    style={{backgroundColor:`${color.hex.value}`}}>

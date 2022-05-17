@@ -2,6 +2,7 @@ import './App.scss';
 import { useState } from 'react';
 import ColorSelection from './components/ColorSelection';
 import ImageGallery from './components/ImageGallery';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -15,12 +16,15 @@ function App() {
 
 
   return (
-    <div className="app wrapper">
-      <h1>Colour Your World</h1>
-      <div className="flexContainer">
-        <ColorSelection handleChange={passingColors} />
-        <ImageGallery colors={colors}/>
-      </div>  
+    <div className="app">
+      <div className="wrapper">
+        <h1>Colour Your World</h1>
+        <div className="flexContainer">
+          <ColorSelection handleChange={passingColors} />
+          <ImageGallery colors={colors} />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

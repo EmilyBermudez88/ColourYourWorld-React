@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poiret+One&display=swap');
+
 @import './partials/baseStyles';
 @import './partials/colorSelection';
 @import './partials/form';
@@ -6,9 +8,12 @@
 @import './partials/pictureGallery';
 @import './partials/mediaQueries';
 
+.app {
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .flexContainer {
   display:flex;
-  .colorSelection{
-    width:30%;
-  }
 }

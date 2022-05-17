@@ -2,7 +2,6 @@
 import axios from 'axios';
 import Form from './Form'
 import DisplayPalette from './DisplayPalette'
-import Footer from './Footer';
 import {useEffect, useState} from 'react';
 
 function ColorSelection(props){
@@ -61,7 +60,6 @@ function ColorSelection(props){
                {
                     !colorData ? null : <DisplayPalette colors={colorData} />
                }
-               <Footer />
           </section>
      )
 }
