@@ -4,50 +4,45 @@ import {useState} from 'react';
 function Form(props){
 
           const [colorInput, setColorInput]= useState("#FFFFFF");
-          const [hexCode, setHexCode] = useState("#FFFFFF")
+          const [hexCode, setHexCode] = useState("#FFFFFF");
           const [userChoices, setUserChoices]= useState({"hexValue":"#FFFFFF","scheme": "analogic"});
-
+          const[regExReturn, setRegExReturn]= useState(true)
 
           const getColour=(param)=>{
-               const lowercase = param.value;
-               const hexValue = lowercase.toUpperCase();
+               const hexValue = param.value;
+               const hexValueUppercase = hexValue.toUpperCase();
                const hex={"hexValue": hexValue}
                setColorInput(hexValue);
-               setHexCode(hexValue)
+               setHexCode(hexValueUppercase)
                setUserChoices({
                     ...userChoices,
                     ...hex
                })
           }
 
-          const viaHex=()=>{
-               const colorInput = document.getElementById("colorText");
-               testingHashtag(colorInput)
-               getColour(colorInput);
-          }
-
           const viaPicker =()=>{
-               const colorInput = document.getElementById("colorInput");
-               getColour(colorInput);
+               const picker = document.getElementById("colorInput");
+               getColour(picker);
+               const uppercase = picker.value.toUpperCase();
+               setHexCode(uppercase);
           }
 
-          const testingHashtag = (param) => {
-               let input = param.value;
-               if (input[0] !== "#") {
-                    input = "#" + input;
-                    console.log(input);
-                    setColorInput(input);
+          const viaHex = () => {
+               const textInput = document.getElementById("colorText");
+               getColour(textInput);
+               const inputValue = textInput.value;
+               if(inputValue[0] !== "#"){
+                    const hashtag = "#" + inputValue;
+                    setColorInput(hashtag);
+               } else {
+                    setColorInput(inputValue);
                }
-               setColorInput(input);
           }
 
           const testingHexCode = ()=>{
-               if (/#([a-f0-9]{6})/.test(colorInput)) {
-                    console.log('yes')
-                    console.log(colorInput)
-               } else {
-                    return false
-               }
+               let regExTest = /^#[a-f0-9/]{6,6}$/i
+               let regExResult= regExTest.test(colorInput)
+               setRegExReturn(regExResult);
           }
 
           const handleScheme = (e)=>{
@@ -59,8 +54,10 @@ function Form(props){
           }
 
           const handleSubmit = (e)=>{
-               props.handleSubmit(e, userChoices)
-               testingHexCode();
+               e.preventDefault();
+               testingHexCode();  
+               //right now passing up the regEx value one click too late - add in regExReturn into arguments
+               props.handleSubmit(userChoices)
           }
 
      return(
@@ -72,7 +69,7 @@ function Form(props){
                          <label htmlFor="keyword">Select a Colour</label>
                          <div className="colorSelector">
                               <input type="color" id="colorInput" value={colorInput} onChange={viaPicker} />
-                              <input type="text" id="colorText" value={hexCode} onChange={viaHex} />
+                              <input type="text" id="colorText" value= {hexCode} onChange={viaHex}/>
                          </div>
                     </div>
                     <div className="schemeSelector">
@@ -90,7 +87,7 @@ function Form(props){
                          </select>
                     </div>
                </div>
-               {!testingHexCode ? <p>Wrong</p> : null }
+               {!regExReturn ? <p className="warning">Sorry, please enter a valid Hex Value (6 digits, A-F and 0-9)</p> : null }
                <button type="submit" className="submit">Find Colours to Match</button>
           </form>
      )

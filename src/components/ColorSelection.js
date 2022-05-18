@@ -8,11 +8,12 @@ function ColorSelection(props){
      
      const [userChoices, setUserChoices]= useState({})
      const [colorData, setColorData]= useState([]);
+     // const [validation, setValidation] = useState()
      
 
-     const formSubmit = (e, userParams) => {
-          e.preventDefault();
+     const formSubmit = (userParams) => {
           setUserChoices(userParams);
+          // setValidation(validation)
      }
 
      useEffect(()=>{
