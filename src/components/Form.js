@@ -9,7 +9,8 @@ function Form(props){
 
 
           const getColour=(param)=>{
-               const hexValue = param.value;
+               const lowercase = param.value;
+               const hexValue = lowercase.toUpperCase();
                const hex={"hexValue": hexValue}
                setColorInput(hexValue);
                setHexCode(hexValue)
@@ -37,6 +38,7 @@ function Form(props){
                     console.log(input);
                     setColorInput(input);
                }
+               setColorInput(input);
           }
 
           const testingHexCode = ()=>{

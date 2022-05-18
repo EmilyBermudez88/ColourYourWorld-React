@@ -8,6 +8,9 @@
           min-height: 140px;
      }
      //Form
+     form{
+          margin-right: 0;
+     }
      .formFlexContainer {
           @include flex(row);
           width: 75%;
@@ -28,6 +31,7 @@
      //Swatches
      .colorsList{
           @include flex(row);
+          margin-top: 35px;
      }
      .individualColor{
           flex-direction:column;
@@ -40,7 +44,7 @@
                height: 100px;
           }
      }
-     //IMAGE GALLERY
+     // IMAGE GALLERY //
      main {
           margin-left: 0px;
      }
@@ -62,13 +66,87 @@
 }
 
 @media(max-width: 580px){
+     //Form
+     .formFlexContainer {
+          width: 100%;
+     }
+     button{
+          width: 100%;
+          margin-left: 0;
+     }
      //Swatches
      .colorsList{
           flex-wrap:wrap;
           justify-content: center;
+          margin-top: 25px;
      }
      .individualColor {
           width: 33%;
      }
+     //Navigation
+     .roomList{
+          li{
+               height: 85px;
+          }
+     }
+}
 
+@media(max-width: 470px){
+     .wrapper {
+          width: 95%;
+     }
+     h1{
+          font-size: 2.2rem;
+     }
+     p{
+          font-size: 0.8rem;
+     }
+     label{
+          font-size: 0.9rem;
+          text-align: center;
+     }
+     //Form
+     form{
+          align-items: center;
+          .formFlexContainer{
+               flex-direction: column;
+               input[type=color]{
+                    width: 100px;
+                    margin-right: 10px;
+               }
+          }
+          .colorSelector{
+               justify-content:center;
+          }
+          .schemeSelector{
+               margin: 7px auto;
+          }
+          select{
+               width: 250px;
+          }
+          button {
+               width: 250px;
+          }
+     }
+     //Swatches
+     .individualColor{
+          .swatch{
+               width: 70px;
+               height: 70px;
+          }
+     }
+     //Navigation
+     .roomList{
+          li{
+               height: 75px;
+               &:nth-child(2){
+                    margin: 0 5px;
+               }
+          }
+     }
+}
+@media(max-width: 400px){
+     h1{
+          font-size: 2rem;
+     }
 }

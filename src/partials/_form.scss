@@ -1,5 +1,7 @@
 form{
      margin-right: var(--section-margins);
+     display:flex;
+     flex-direction:column;
      label {
           display:block;
      }
