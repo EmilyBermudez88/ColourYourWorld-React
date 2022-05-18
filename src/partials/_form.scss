@@ -1,23 +1,27 @@
 form{
-     margin-right: 20px;
+     margin-right: var(--section-margins);
      label {
           display:block;
      }
      select{
-          width: 100%;
+          width: var(--max-size);
+          padding: 6px 10px;
      }
      input {
+          padding: 4px 10px;
           &[type=color]{
                height:30px;
                width: 70px;
                padding: 4px;
           }
+          &[type=text]{
+               width: 120px;
+          }
      }
      .colorSelector{
-          display:flex;
-          justify-content: space-between;
+          @include flex(row);
      }
      .schemeSelector{
-          margin-top: 20px;
+          margin-top: var(--section-margins);
      }
 }

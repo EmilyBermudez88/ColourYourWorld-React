@@ -14,7 +14,7 @@ body {
 }
 
 img {
-     max-width: 100%;
+     max-width: var(--max-size);
      object-fit: cover;
 }
 
@@ -26,15 +26,15 @@ h1 {
 
 input, select, button {
      font-family: "Poiret One", sans-serif;
+     font-size: 0.7rem;
      background-color: transparent;
-     border: 1px solid rgb(166, 166, 166);
+     border: 1px solid var(--dark-grey-outline);
      margin: 7px 0;
-     padding: 5px 10px;
 }
 
 button {
-     border: 1px solid gold;
-     width: 100%;
+     border: 1px solid var(--gold-color);
+     width: var(--max-size);
      padding: 5px 0;
      font-size: 0.8rem;
      text-transform: uppercase;
@@ -42,7 +42,7 @@ button {
      transition: 0.5s;
      &:hover,
      &:focus{
-          background-color: gold;
+          background-color: var(--gold-color);
           border: 1px solid black;
           outline:none;
      }
@@ -54,7 +54,7 @@ a{
 }
 
 footer{
-     background-color: rgb(226, 226, 226);
+     background-color: var(--grey-background);
      padding: 5px;
      margin-top: 7px;
      p{
@@ -64,7 +64,7 @@ footer{
      a{
           transition:0.7s;
           &:hover{
-               background: rgba(gold, 0.5);
+               background: var(--gold-color);
           }
      }
 }

@@ -1,18 +1,16 @@
 .roomList{
-     display:flex;
-     justify-content: space-between;
-     list-style: none;
+     @include flex(row);
+     @include lists(20px auto);
      max-width: 670px;
      padding-left: 0px;
-     margin: 20px auto;
      li {
           height: 100px;
           img{
-               max-height: 100%;
+               max-height: var(--max-size);
           }
           a{
                display:inline-block;
-               height: 100%;
+               height: var(--max-size);
           }
      }
 }

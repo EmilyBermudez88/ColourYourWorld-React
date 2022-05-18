@@ -5,8 +5,6 @@ import DisplayPalette from './DisplayPalette'
 import {useEffect, useState} from 'react';
 
 function ColorSelection(props){
-
-     console.log(props.handleChange)
      
      const [userChoices, setUserChoices]= useState({})
      const [colorData, setColorData]= useState([]);

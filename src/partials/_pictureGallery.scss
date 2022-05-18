@@ -1,7 +1,6 @@
 main {
-     display:flex;
-     flex-direction: column;
-     margin-left: 20px;
+     @include flex(column);
+     margin-left: var(--section-margins);
 }
 
 .imageContainer{

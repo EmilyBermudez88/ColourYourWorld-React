@@ -9,9 +9,7 @@
      }
      //Form
      .formFlexContainer {
-          display:flex;
-          flex-direction:row;
-          justify-content: space-between;
+          @include flex(row);
           width: 75%;
           margin: 0 auto;
           .schemeSelector{
@@ -29,9 +27,7 @@
      }
      //Swatches
      .colorsList{
-          display:flex;
-          flex-direction:row;
-          justify-content: space-between;
+          @include flex(row);
      }
      .individualColor{
           flex-direction:column;
@@ -47,6 +43,32 @@
      //IMAGE GALLERY
      main {
           margin-left: 0px;
+     }
+
+}
+
+@media(max-width: 660px){
+     //Form
+     .formFlexContainer{
+          width: 90%;
+     }
+     select {
+          width: 160px;
+     }
+     button{
+          width: 90%;
+          margin-left: 5%;
+     }
+}
+
+@media(max-width: 580px){
+     //Swatches
+     .colorsList{
+          flex-wrap:wrap;
+          justify-content: center;
+     }
+     .individualColor {
+          width: 33%;
      }
 
 }

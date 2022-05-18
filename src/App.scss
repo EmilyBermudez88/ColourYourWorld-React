@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poiret+One&display=swap');
 
+@import './partials/mixins';
 @import './partials/baseStyles';
 @import './partials/colorSelection';
 @import './partials/form';
@@ -16,4 +17,14 @@
 }
 .flexContainer {
   display:flex;
+}
+
+:root {
+  --gold-color: rgb(244, 213, 35);
+  --grey-background: rgb(231, 231, 231);
+  --dark-grey-outline: rgb(166, 166, 166);
+
+  --max-size: 100%;
+  --section-margins: 20px;
+  --word-margins: 10px;
 }
